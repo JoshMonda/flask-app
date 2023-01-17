@@ -5,52 +5,76 @@
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <style>
-    .navbar navbar-expand-lg navbar-expand bg-body-tertiary a
+    .navbar a
     {
         position: relative;
         padding-left: 5px;
         display: flex;
         text-decoration: none;
         background-color: black;
+        color: white;
+        padding-left: 100px;
+        font-weight: 600;
+
+    }
+    .navbar-nav
+    {
+        color: white;
     }
     body{
         background-color: black;
     }
+    .card mb-3
+    {
+        padding-left: 40px;
+    }
 </style>
 </head>
-<body bgcolor="black">
-<nav class="navbar navbar-expand-lg navbar-expand bg-body-tertiary">
-    <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="logo-transparent-png.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-    </a>
-
-        <a href="{{ url_for('home') }}">Home</a>
-        <a href="{{ url_for('about') }}">About Us</a>
-        <a href="{{ url_for('contact') }}">Contact Us</a>
-        </div>
-</nav>
+<div bgcolor="black">
+{#<nav class="navbar navbar-expand-lg navbar-expand bg-body-tertiary">#}
+{#    <div class="container-fluid">#}
+{#    <a class="navbar-brand" href="#">#}
+{#      <img src="logo-transparent-png.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">#}
+{#    </a>#}
+{##}
+{#        <a href="{{ url_for('home') }}">Home</a>#}
+{#        <a href="{{ url_for('about') }}">About Us</a>#}
+{#        <a href="{{ url_for('contact') }}">Contact Us</a>#}
+{#        </div>#}
+{#</nav>#}
 {#Start of second nav#}
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <div class="sticky-sm-top">
+<nav class="navbar navbar-expand-lg bg-black" data-bs-theme="black">
+
+      <a class="navbar-brand" href="">
+      <img src="https://i0.wp.com/www.juventusworld.online/wp-content/uploads/2022/12/cropped-logo-transparent-png.png?resize=2048%2C503&ssl=1" alt="Logo" width="100" height="40" class="d-inline-block align-text-top">
+      </a>
+    <div class="container-fluid">
+    <a class="navbar-brand" href="{{ url_for('home') }}">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Features</a>
-        <a class="nav-link" href="#">Pricing</a>
-        <a class="nav-link disabled">Disabled</a>
+        <a class="nav-link" aria-current="page" href="{{ url_for('about') }}">About us</a>
+        <a class="nav-link" href="{{ url_for('contact') }}">Contact Us</a>
+        <a class="nav-link" href="{{ url_for('services') }}">Services</a>
+{#        <a class="nav-link disabled">Disabled</a>#}
       </div>
     </div>
+       <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
   </div>
+
 </nav>
+          </div>
 {#End of the second nav#}
 {#    End#}
 {#    <h1>Welcome to the Home page</h1>#}
 {#    Helo Section#}
+<div class="container-fluid">
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="10000">
@@ -72,15 +96,37 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+</div>
+    <hr>
+  <div class="card mb-3" style="max-width: 80%;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://cdns.tblsft.com/sites/default/files/blog/mobile1-smaller.png" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Get Mobile Responsive website build for your niche</h5>
+        <p class="card-text">Are you looking to build a mobile responsive website for your niche? Look no further! Our team of experienced developers can create a customized website tailored to your specific needs and optimized for all mobile devices. Don't miss out on potential customers and increased engagement by having a non-responsive website. Contact us today to get started on your mobile-friendly site!"</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="card">
+  <div class="card-body">
+      <b><h3>Our Services</h3></b>
+  </div>
+</div>
+
 {#Cards#}
-<hr style="text-decoration: none;">
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
     <div class="card">
-      <img src="https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg" class="card-img-top" alt="...">
+      <img src="https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg" class="card-img-top" alt="..." class="img-thumbnail">
       <div class="card-body">
         <h5 class="card-title">Web Development</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"> "Our web development team is dedicated to creating visually appealing and user-friendly websites that meet the unique needs of your business. We use the latest technologies and design trends to deliver websites that are both functional and visually stunning. From e-commerce to custom web applications, our web development services will help your business stand out online and drive conversions.".</p>
       </div>
     </div>
   </div>
@@ -89,7 +135,7 @@
       <img src="https://www.theforage.com/blog/wp-content/uploads/2022/09/tech-companies.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Artificial Intelligence</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text">Our AI solutions can help your business to increase efficiency and automate repetitive tasks. From chatbots to predictive analytics, we can help you to integrate AI into your business to improve customer service and increase productivity. We will work with you to understand your business needs and find the right AI solution for you."</p>
       </div>
     </div>
   </div>
@@ -97,14 +143,45 @@
     <div class="card">
       <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGVjaG5vbG9neXxlbnwwfHwwfHw%3D&w=1000&q=80" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Software Engineering</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+        <h5 class="card-title">Software Development</h5>
+        <p class="card-text">Our software development team has the skills and expertise to deliver software solutions that are tailored to your specific needs. We specialize in developing custom software applications and integrating third-party software to meet your business requirements. Whether you need a desktop or web-based solution, we can help you to improve efficiency and streamline your business processes.</p>
       </div>
     </div>
   </div>
 </div>
 {#End of cards#}
-
+{#Cards#}
+<hr style="text-decoration: none;">
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg" class="card-img-top" alt="..." class="img-thumbnail">
+      <div class="card-body">
+        <h5 class="card-title">Data Analysis</h5>
+        <p class="card-text">Our data analysis services can help you to make data-driven decisions for your business. We have experts who can extract and analyze data from various sources and provide valuable insights that can help you to optimize your business processes and increase revenue. We can help you to turn your data into actionable information that can be used to drive business growth</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="https://www.theforage.com/blog/wp-content/uploads/2022/09/tech-companies.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Mobile Development</h5>
+        <p class="card-text">Our mobile development team is experienced in creating mobile applications that are optimized for all devices. We can help you to develop iOS and Android apps that are user-friendly and visually appealing. Whether you need a mobile app for your business or to enhance your existing website, our mobile development services can help you to reach a larger audience and increase engagement..</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGVjaG5vbG9neXxlbnwwfHwwfHw%3D&w=1000&q=80" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Digital Marketing</h5>
+        <p class="card-text">Our digital marketing services can help you to increase your online visibility and drive traffic to your website. From search engine optimization (SEO) to social media marketing, we can help you to reach your target audience and increase conversions. We have experts who can develop and execute a comprehensive digital marketing strategy that will help you to achieve your business goals</p>
+      </div>
+    </div>
+  </div>
+</div>
+{#End of cards#}
 {#End of Helo section#}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
